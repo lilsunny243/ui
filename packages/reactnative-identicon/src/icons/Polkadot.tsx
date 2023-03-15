@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { Circle as CircleType } from '@polkadot/ui-shared/icons/types';
-import type { Props } from '../types';
+import type { Props } from '../types.js';
 
 import React, { useMemo } from 'react';
 import { View } from 'react-native';
-import Svg, { Circle as SvgCircle } from 'react-native-svg';
+import { Circle as SvgCircle, Svg } from 'react-native-svg';
 
 import { polkadotIcon } from '@polkadot/ui-shared';
 

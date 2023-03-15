@@ -3,17 +3,17 @@
 
 import type { KeyringInstance, KeyringPair } from '@polkadot/keyring/types';
 import type { Prefix } from '@polkadot/util-crypto/address/types';
-import type { AddressSubject } from './observable/types';
-import type { KeyringOptions, KeyringStore } from './types';
+import type { AddressSubject } from './observable/types.js';
+import type { KeyringOptions, KeyringStore } from './types.js';
 
 import { createTestKeyring } from '@polkadot/keyring';
 import { isBoolean, isNumber, isString } from '@polkadot/util';
 
-import { accounts } from './observable/accounts';
-import { addresses } from './observable/addresses';
-import { contracts } from './observable/contracts';
-import { env } from './observable/env';
-import { BrowserStore } from './stores/Browser'; // direct import (skip index with all)
+import { accounts } from './observable/accounts.js';
+import { addresses } from './observable/addresses.js';
+import { contracts } from './observable/contracts.js';
+import { env } from './observable/env.js';
+import { BrowserStore } from './stores/Browser.js'; // direct import (skip index with all)
 
 export class Base {
   #accounts: AddressSubject;
