@@ -1,10 +1,9 @@
 // Copyright 2018-2023 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-// eslint-disable-next-line spaced-comment
-/// <reference types="@polkadot/dev/node/test/node" />
+/// <reference types="@polkadot/dev-test/node.d.ts" />
 
-import { polkadotIcon } from './polkadot';
+import { polkadotIcon } from './polkadot.js';
 
 describe('polkadotIcon', (): void => {
   it('generates the correct points from known', (): void => {

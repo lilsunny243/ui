@@ -7,7 +7,7 @@
 //
 // https://github.com/paritytech/oo7/blob/251ba2b7c45503b68eab4320c270b5afa9bccb60/packages/polkadot-identicon/src/index.jsx
 
-import type { Circle, Options } from './types';
+import type { Circle, Options } from './types.js';
 
 import { blake2AsU8a, decodeAddress } from '@polkadot/util-crypto';
 
@@ -57,7 +57,7 @@ function getRotation (isSixPoint: boolean): { r: number; ro2: number; r3o4: numb
   return { r, r3o4, ro2, ro4, rroot3o2, rroot3o4 };
 }
 
-function getCircleXY (isSixPoint: boolean): [number, number][] {
+function getCircleXY (isSixPoint = false): [number, number][] {
   const { r, r3o4, ro2, ro4, rroot3o2, rroot3o4 } = getRotation(isSixPoint);
 
   return [

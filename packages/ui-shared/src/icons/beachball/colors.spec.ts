@@ -1,13 +1,12 @@
 // Copyright 2017-2023 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-// eslint-disable-next-line spaced-comment
-/// <reference types="@polkadot/dev/node/test/node" />
+/// <reference types="@polkadot/dev-test/node.d.ts" />
 
-import type { ColorGen } from './types';
+import type { ColorGen } from './types.js';
 
-import { colors as newColors } from './colors';
-import { seeder as newSeeder } from './seeder';
+import { colors as newColors } from './colors.js';
+import { seeder as newSeeder } from './seeder.js';
 
 describe('colors', (): void => {
   let colors: ColorGen;
@@ -20,8 +19,9 @@ describe('colors', (): void => {
     expect(
       colors()
     ).toEqual(
-      // 'hsla(166.70000000000005, 98.6%, 27.6%, 0.9)'
-      'hsl(37.19999999999999, 100%, 54.9%)'
+      // with original color ...
+      // 'hsl(37.19999999999999, 100%, 54.9%)'
+      'hsl(37, 100%, 55%)'
     );
   });
 
@@ -29,17 +29,22 @@ describe('colors', (): void => {
     expect(
       colors(0.5)
     ).toEqual(
-      // 'hsla(166.70000000000005, 98.6%, 27.6%, 0.5)'
-      'hsla(37.19999999999999, 100%, 54.9%, 0.5)'
+      // with original color ...
+      // 'hsla(37.19999999999999, 100%, 54.9%, 0.5)'
+      'hsla(37, 100%, 55%, 0.5)'
     );
   });
 
   it('rolates colors', (): void => {
-    colors();
+    const orig = colors();
+
+    expect(
+      orig
+    ).toEqual('hsl(37, 100%, 55%)');
 
     expect(
       colors()
-    ).not.toEqual('hsla(166.70000000000005, 98.6%, 27.6%, 0.9)');
+    ).not.toEqual(orig);
   });
 
   it('works in edge conditions (0xff)', (): void => {
@@ -54,8 +59,9 @@ describe('colors', (): void => {
     expect(
       colors()
     ).toEqual(
-      // 'hsla(234.39999999999998, 75.9%, 51.2%, 0.9)'
-      'hsl(15, 0%, 100%)'
+      // with original color ...
+      // 'hsl(15, 0%, 100%)'
+      'hsl(0, 0%, 100%)'
     );
   });
 });
