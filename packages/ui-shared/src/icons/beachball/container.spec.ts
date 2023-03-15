@@ -1,10 +1,9 @@
 // Copyright 2017-2023 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-// eslint-disable-next-line spaced-comment
-/// <reference types="@polkadot/dev/node/test/node" />
+/// <reference types="@polkadot/dev-test/node.d.ts" />
 
-import { container } from './container';
+import { container } from './container.js';
 
 describe('container', (): void => {
   it('applies default styles', (): void => {

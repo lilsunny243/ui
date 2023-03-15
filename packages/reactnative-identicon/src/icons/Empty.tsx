@@ -1,11 +1,11 @@
 // Copyright 2017-2023 @polkadot/reactnative-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Props } from '../types';
+import type { Props } from '../types.js';
 
 import React from 'react';
 import { View } from 'react-native';
-import Svg, { Circle } from 'react-native-svg';
+import { Circle, Svg } from 'react-native-svg';
 
 export default function Empty ({ size }: Props): React.ReactElement<Props> {
   return (

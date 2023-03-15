@@ -2,15 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { KeypairType } from '@polkadot/util-crypto/types';
-import type { KeyringJson, KeyringStore } from '../types';
-import type { AddressSubject, SingleAddress, SubjectInfo } from './types';
+import type { KeyringJson, KeyringStore } from '../types.js';
+import type { AddressSubject, SingleAddress, SubjectInfo } from './types.js';
 
 import { BehaviorSubject } from 'rxjs';
 
 import { objectCopy, objectSpread } from '@polkadot/util';
 
-import { createOptionItem } from '../options/item';
-import { env } from './env';
+import { createOptionItem } from '../options/item.js';
+import { env } from './env.js';
 
 function callNext (current: SubjectInfo, subject: BehaviorSubject<SubjectInfo>, withTest: boolean): void {
   const isDevMode = env.isDevelopment();
