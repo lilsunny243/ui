@@ -1,14 +1,14 @@
 // Copyright 2017-2023 @polkadot/ui-settings authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import type { Endpoint, EndpointType, Option, SettingsStruct } from './types';
+import type { Endpoint, EndpointType, Option, SettingsStruct } from './types.js';
 
 import EventEmitter from 'eventemitter3';
 import store from 'store';
 
 import { hasProcess, isUndefined } from '@polkadot/util';
 
-import { CAMERA, CAMERA_DEFAULT, CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING, LOCKING_DEFAULT, METADATA_UP, METADATA_UP_DEFAULT, NOTIFICATION_DEFAULT, PREFIX_DEFAULT, PREFIXES, STORAGE, STORAGE_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults';
+import { CAMERA, CAMERA_DEFAULT, CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER, ENDPOINT_DEFAULT, ENDPOINTS, ICON_DEFAULT, ICONS, LANGUAGE_DEFAULT, LEDGER_CONN, LEDGER_CONN_DEFAULT, LOCKING, LOCKING_DEFAULT, METADATA_UP, METADATA_UP_DEFAULT, NOTIFICATION_DEFAULT, PREFIX_DEFAULT, PREFIXES, STORAGE, STORAGE_DEFAULT, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults/index.js';
 
 type ChangeCallback = (settings: SettingsStruct) => void;
 type OnTypes = 'change';

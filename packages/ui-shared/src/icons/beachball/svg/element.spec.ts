@@ -1,12 +1,11 @@
 // Copyright 2017-2023 @polkadot/ui-shared authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-// eslint-disable-next-line spaced-comment
-/// <reference types="@polkadot/dev/node/test/node" />
+/// <reference types="@polkadot/dev-test/node.d.ts" />
 
 import xs from 'xmlserializer';
 
-import { element } from './element';
+import { element } from './element.js';
 
 describe('element', (): void => {
   it('creates a basic SVG element', (): void => {

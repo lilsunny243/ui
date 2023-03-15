@@ -4,7 +4,26 @@
 
 Changes:
 
+- Swap `vue-identitycon` to use `defineComponent` (requires vue 2.7+)
+- Swap `BeachballIcon` to use `colord` library (ESM + CJS, smaller)
+
+
+## 3.0.2 Mar 11, 2023
+
+Changes:
+
+- Use consistent `.js` imports in source files (TS moduleResolution)
+- Bump to `@polkadot/util` 11.0.2
+
+
+## 3.0.1 Mar 5, 2023
+
+Changes:
+
 - Remove `@polkadot/ui-assets` package
+- Swap TS -> JS compiler to use tsc (from babel)
+- Adjust all tests to use `node:test` runner (ESM variants)
+- Bump to `@polkadot/util` 11.0.1
 
 
 ## 2.12.1 Feb 20, 2023
