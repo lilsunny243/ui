@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { KeyringInstance, KeyringPair } from '@polkadot/keyring/types';
+import type { HexString } from '@polkadot/util/types';
 import type { Prefix } from '@polkadot/util-crypto/address/types';
 import type { AddressSubject } from './observable/types.js';
 import type { KeyringOptions, KeyringStore } from './types.js';
@@ -22,18 +23,21 @@ export class Base {
 
   #contracts: AddressSubject;
 
+  #isEthereum: boolean;
+
   #keyring?: KeyringInstance;
 
   protected _store: KeyringStore;
 
-  protected _genesisHash?: string;
+  protected _genesisHash?: HexString | undefined;
 
-  protected _genesisHashAdd: string[] = [];
+  protected _genesisHashAdd: HexString[] = [];
 
   constructor () {
     this.#accounts = accounts;
     this.#addresses = addresses;
     this.#contracts = contracts;
+    this.#isEthereum = false;
     this._store = new BrowserStore();
   }
 
@@ -49,6 +53,10 @@ export class Base {
     return this.#contracts;
   }
 
+  public get isEthereum (): boolean {
+    return this.#isEthereum;
+  }
+
   public get keyring (): KeyringInstance {
     if (this.#keyring) {
       return this.#keyring;
@@ -57,11 +65,11 @@ export class Base {
     throw new Error('Keyring should be initialised via \'loadAll\' before use');
   }
 
-  public get genesisHash (): string | undefined {
+  public get genesisHash (): HexString | undefined {
     return this._genesisHash;
   }
 
-  public get genesisHashes (): string[] {
+  public get genesisHashes (): HexString[] {
     return this._genesisHash
       ? [this._genesisHash, ...this._genesisHashAdd]
       : [...this._genesisHashAdd];
@@ -117,10 +125,13 @@ export class Base {
       this.setDevMode(options.isDevelopment);
     }
 
+    // set Ethereum state
+    this.#isEthereum = keyring.type === 'ethereum';
+
     this.#keyring = keyring;
     this._genesisHash = options.genesisHash && (
       isString(options.genesisHash)
-        ? options.genesisHash.toString()
+        ? options.genesisHash.toString() as HexString
         : options.genesisHash.toHex()
     );
     this._genesisHashAdd = options.genesisHashAdd || [];

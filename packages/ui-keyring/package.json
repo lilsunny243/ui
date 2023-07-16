@@ -2,7 +2,7 @@
   "author": "Jaco Greeff <jacogr@gmail.com>",
   "bugs": "https://github.com/polkadot-js/ui/issues",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "homepage": "https://github.com/polkadot-js/ui/tree/master/packages/ui-keyring#readme",
   "license": "Apache-2.0",
@@ -17,20 +17,20 @@
     "./detectPackage.cjs"
   ],
   "type": "module",
-  "version": "3.0.3-5-x",
+  "version": "3.5.2-1-x",
   "main": "index.js",
   "dependencies": {
-    "@polkadot/keyring": "^11.0.2",
-    "@polkadot/ui-settings": "3.0.3-5-x",
-    "@polkadot/util": "^11.0.2",
-    "@polkadot/util-crypto": "^11.0.2",
-    "mkdirp": "^2.1.5",
-    "rxjs": "^7.8.0",
+    "@polkadot/keyring": "^12.3.2",
+    "@polkadot/ui-settings": "3.5.2-1-x",
+    "@polkadot/util": "^12.3.2",
+    "@polkadot/util-crypto": "^12.3.2",
+    "mkdirp": "^3.0.1",
+    "rxjs": "^7.8.1",
     "store": "^2.0.12",
-    "tslib": "^2.5.0"
+    "tslib": "^2.6.0"
   },
   "devDependencies": {
-    "@types/mkdirp": "^1.0.2",
+    "@types/mkdirp": "^2.0.0",
     "@types/store": "^2.0.2"
   },
   "peerDependencies": {

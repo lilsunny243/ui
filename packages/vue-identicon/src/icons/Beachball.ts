@@ -1,7 +1,9 @@
 // Copyright 2017-2023 @polkadot/vue-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { defineComponent, VNode } from 'vue';
+import type { VNode } from 'vue';
+
+import { defineComponent, h } from 'vue';
 
 import { beachballIcon } from '@polkadot/ui-shared';
 
@@ -17,7 +19,7 @@ type PropsType = {
  */
 export const Beachball = defineComponent({
   props: ['address', 'size', 'isAlternative'],
-  render (h): VNode {
+  render (): VNode {
     const { address, isAlternative, size } = this.$props as PropsType;
 
     return h({

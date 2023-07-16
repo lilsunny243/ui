@@ -1,8 +1,10 @@
 // Copyright 2017-2023 @polkadot/vue-identicon authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import type { VNode } from 'vue';
+
 import * as jdenticon from 'jdenticon';
-import { defineComponent, VNode } from 'vue';
+import { defineComponent, h } from 'vue';
 
 type PropsType = {
   publicKey: string,
@@ -15,7 +17,7 @@ type PropsType = {
  */
 export const Jdenticon = defineComponent({
   props: ['publicKey', 'size'],
-  render (h): VNode {
+  render (): VNode {
     const { publicKey, size } = this.$props as PropsType;
 
     return h({

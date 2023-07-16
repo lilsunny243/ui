@@ -3,27 +3,17 @@
 
 import React, { useCallback, useMemo } from 'react';
 import Reader from 'react-qr-reader';
-import styledComponents, { StyledInterface } from 'styled-components';
 
+import { styled } from './styled.js';
 import { createImgSize } from './util.js';
 
-// In styled-components v6, there is a named export which can be used
-// directly, i.e. "import { styled } from ..." with no more magic. Until
-// such time the cjs vs esm import here is problematic, so we hack around
-// the various shapes below
-const styled = (
-  (styledComponents as unknown as { styled: StyledInterface }).styled ||
-  (styledComponents as unknown as { default: StyledInterface }).default ||
-  styledComponents as unknown as StyledInterface
-);
-
 interface Props {
-  className?: string;
+  className?: string | undefined;
   delay?: number;
-  onError?: (error: Error) => void;
+  onError?: undefined | ((error: Error) => void);
   onScan: (data: string) => void;
-  size?: string | number;
-  style?: React.CSSProperties;
+  size?: string | number | undefined;
+  style?: React.CSSProperties | undefined;
 }
 
 const DEFAULT_DELAY = 150;
@@ -32,7 +22,7 @@ const DEFAULT_ERROR = (error: Error): void => {
   console.error('@polkadot/react-qr:Scan', error.message);
 };
 
-function Scan ({ className, delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onScan, size, style }: Props): React.ReactElement<Props> {
+function Scan ({ className = '', delay = DEFAULT_DELAY, onError = DEFAULT_ERROR, onScan, size, style = {} }: Props): React.ReactElement<Props> {
   const containerStyle = useMemo(
     () => createImgSize(size),
     [size]

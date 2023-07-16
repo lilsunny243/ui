@@ -1,11 +1,82 @@
 # CHANGELOG
 
-## master
+## 3.5.1 Jun 11, 2023
+
+Changes:
+
+- Adjust object index access for stricter tsconfig settings
+- Bump to `@polkadot/util` 12.3.1
+
+
+## 3.4.2 Jun 5, 2023
+
+- Bump to `@polkadot/util` 12.2.2
+
+
+## 3.4.1 May 13, 2023
+
+Changes:
+
+- Add `module` to `package.json` export map (ESM-only)
+- Bump to `@polkadot/util` 12.2.1
+
+
+## 3.3.1 May 7, 2023
+
+Contributed:
+
+- Adjust `vue-identicon` to be Vue 3 compatible (Thanks to https://github.com/Gavin-Gong)
+
+Changes:
+
+- Bump to `@polkadot/util` 12.1.2
+
+
+## 3.2.2 Apr 29, 2023
+
+Changes:
+
+- Add missing `react-is` peer dependency for `styled-components`
+- Adjust compilation output for `__internal__` class fields
+- Bump to `@polkadot/util` 12.1.1
+
+
+## 3.2.1 Apr 22, 2023
+
+Changes:
+
+- Bump to `@polkadot/util` 12.0.1
+
+
+## 3.1.4 Apr 1, 2023
+
+Changes:
+
+- Bump to `@polkadot/util` 11.1.3
+
+
+## 3.1.3 Mar 25, 2023
+
+Changes:
+
+- Align `eventemitter` version with `@polkadot/api`
+
+
+## 3.1.2 Mar 25, 2023
+
+Changes:
+
+- Cater for Ethereum-compatible multisig addresses
+- Bump to `@polkadot/util` 11.1.2
+
+
+## 3.1.1 Mar 19, 2023
 
 Changes:
 
 - Swap `vue-identitycon` to use `defineComponent` (requires vue 2.7+)
 - Swap `BeachballIcon` to use `colord` library (ESM + CJS, smaller)
+- Bump to `@polkadot/util` 11.1.1
 
 
 ## 3.0.2 Mar 11, 2023
